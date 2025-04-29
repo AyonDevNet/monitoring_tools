@@ -2,12 +2,16 @@
 
 
 #using RAM in Linux machine OS
-fre
+Ramfre=$(free -mt | grep 'total' | awk '{print $4}')
+TH=500
 
+if (( Ramfre <= TH )); then
+    echo "You Ram is low"
+else
+    echo "Your RAM is good"
+fi 
 
-
-
-
+sleep 5
 
 
 # Get available RAM in MB from /proc/meminfo
@@ -22,4 +26,5 @@ if [[ $freeRam -lt $TH ]]; then
 else 
     echo "The RAM is sufficient: $freeRam MB"
 fi
-sleep -5s
+
+sleep 5
