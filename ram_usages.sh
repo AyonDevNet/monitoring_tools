@@ -1,10 +1,24 @@
-#this is command help you to identified ram usages in Linux OS
+#!/bin/bash
 
-free_ram=$(free -mt | grep "total" | awk '{print $4}')
+
+
+
+
+
+
+
+
+
+# Get available RAM in MB from /proc/meminfo
+#if we use it in VS code
+free_ram=$(grep MemAvailable /proc/meminfo | awk '{print $2}')  # in kB, so divide by 1024 for MB
+free_ram=$((free_ram / 1024))  # Convert to MB
+
 TH=500
 
-if [[ free_ram -lt TH ]]; then
-     echo "Warning the RAM is low"
+if [[ $free_ram -lt $TH ]]; then
+    echo "Warning: RAM is low!"
 else 
-     echo "The is RAM is suficient" $free_ram
+    echo "The RAM is sufficient: $free_ram MB"
 fi
+sleep -5s
