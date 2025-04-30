@@ -16,3 +16,5 @@ fi
 #grep sda2 is actullay is main disk and it is shown by grep comand 
 # awk '{print $4}'This part tells awk to print the 4th column of each line of input.
 #tr -d % This part is used to delete the percentage symbol (%) from the string.
+
+
