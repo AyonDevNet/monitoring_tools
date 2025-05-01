@@ -24,4 +24,5 @@ do
         if [ $RUN -eq 0]; then
            gzip $i || exit 1
            mv $i.gz  $BASE/compresed_file || exit 1
+        fi
 done
