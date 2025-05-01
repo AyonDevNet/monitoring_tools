@@ -23,7 +23,7 @@ then
 fi
 
 #THIS IS THE CODE TO EXECUTED
-for i in `find $BASE -maxdepth $DEPTH -type f -size +50MB`
+for i in `find $BASE -maxdepth $DEPTH -type f -size +50M`
 do
         if [[ $RUN -eq 0 ]]; then
            gzip $i || exit 1
