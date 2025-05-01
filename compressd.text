@@ -1,0 +1,60 @@
+✅ DEPTH=1
+This variable is used with the find command:
+
+bash
+Copy
+Edit
+find "$BASE" -maxdepth "$DEPTH" -type f -size +50M
+Purpose:
+DEPTH=1 limits how deep the find command will search for files inside the $BASE directory.
+
+A depth of 1 means it will look only in $BASE and its immediate subdirectories, but not deeper.
+
+Example:
+If your directory structure is:
+
+swift
+Copy
+Edit
+/home/compresed_file/archive_file/
+├── file1.txt
+├── subdir/
+│   └── file2.txt
+└── subdir2/
+    └── subsubdir/
+        └── file3.txt
+With DEPTH=1, it will include file1.txt and subdir/file2.txt, but exclude subdir2/subsubdir/file3.txt.
+
+✅ RUN=0
+Used in this condition:
+
+bash
+Copy
+Edit
+if [[ $RUN -eq 0 ]]; then
+    gzip "$file" || exit 1
+    mv "${file}.gz" "$BASE/compressed_file" || exit 1
+fi
+Purpose:
+This looks like a control flag — but in its current form, it doesn’t serve any real purpose, because RUN is always 0 and never changes.
+
+Possible Intentions:
+Enable/disable compression based on RUN value.
+
+If set to 0: allow compression.
+
+If set to 1: skip it.
+
+But currently, it always allows compression and is not very useful unless toggled dynamically.
+
+Future-proofing or debugging.
+
+Sometimes used to easily turn a block of code on/off during testing.
+
+✅ Suggestions:
+If RUN is not being used for anything dynamic, you can safely remove it for simplicity unless you plan to:
+
+Toggle between dry run (RUN=1) and actual execution (RUN=0)
+
+Introduce logic to modify RUN based on user input or flags
+

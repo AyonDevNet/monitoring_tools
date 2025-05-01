@@ -1,3 +1,7 @@
+#!/bin/bash
+
+
+
 #if any file larger than 50MB then it will compressed those and preserve it in compresed_file 
 
 BASE=/home/compresed_file/archive_file/compressd_file.sh
@@ -21,7 +25,7 @@ fi
 #THIS IS THE CODE TO EXECUTED
 for i in `find $BASE -maxdepth $DEPTH -type f -size +50MB`
 do
-        if [ $RUN -eq 0]; then
+        if [[ $RUN -eq 0 ]]; then
            gzip $i || exit 1
            mv $i.gz  $BASE/compresed_file || exit 1
         fi
