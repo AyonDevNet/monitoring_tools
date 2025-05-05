@@ -1,3 +1,3 @@
 #!bin/bash
 
-echo "users_add_create.sh"
+echo "we are under develop and start work very soon"
