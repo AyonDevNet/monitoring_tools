@@ -1,74 +1,89 @@
-# 🛠️ Linux Monitoring Tool (Shell Script Based)
-📋 Overview
-This repository is built to provide a lightweight, efficient system monitoring tool using Shell Scripts, designed exclusively for Linux OS or Linux-based servers.
+# 🛠️ Bash Monitoring & Management Tools for Linux Systems
 
-It allows system administrators and DevOps professionals to monitor essential system metrics in real time or on a scheduled basis — without relying on bulky third-party tools.
+A collection of powerful Bash scripts for monitoring and managing Linux systems. This toolkit is designed for system administrators, DevOps engineers, and Linux power users who want quick, effective tools for resource monitoring, MySQL setup, user management, and more.
 
-⚙️ Features
-✅ CPU Usage Monitoring
+📌 Repository: [monitoring_tools](https://github.com/AyonDevNet/monitoring_tools)
 
-✅ Memory (RAM) Usage Monitoring
 
-✅ Disk Usage and Inode Monitoring
+## 🚀 Key Features
 
-✅ Network Traffic Analysis
+- 🔍 Monitor system resources (RAM, disk, network)
+- 🧰 Automate MySQL installation and secure setup
+- 👤 Create multiple users from a file
+- 🗃️ Compress files with custom naming
+- 🌐 Perform basic network diagnostics
+- 🧪 Ready-to-run Bash scripts for any Linux environment
 
-✅ Logged-in Users & Uptime Info
+---
 
-✅ Process Monitoring
+## 📂 Script Overview
 
-✅ Customizable Alerts (email/logs)
+| File Name               | Description                                                                 |
+|------------------------|-----------------------------------------------------------------------------|
+| `mysql_install_script.sh` | Install and secure MySQL 5.7 automatically using Bash                     |
+| `disk.sh`              | Check disk usage and show mounted partitions                                |
+| `ram_usages.sh`        | Monitor RAM usage and system memory stats                                   |
+| `network.bash`         | Perform basic network tests like ping, IP info, and connectivity checks     |
+| `users_add_create.sh`  | Create users in bulk from a file and assign passwords                       |
+| `compressd_file.sh`    | Compress and archive files with custom options                              |
+| `compressd.text`       | Sample file input for compression                                            |
 
-✅ Easy to read CLI Output or Log File Option
+---
 
-🐧 Supported OS
-This tool is intended only for Linux environments, such as:
+## ⚙️ Usage Instructions
 
--> Ubuntu
+1. **Clone this repo:**
+   
+   git clone https://github.com/AyonDevNet/monitoring_tools.git
+   cd monitoring_tools
 
--> Debian
+Make scripts executable:
 
--> CentOS / RHEL
+permission : 
+chmod +x *.sh *.bash
 
--> Arch Linux
+Run any script:
+./disk.sh
+./mysql_install_script.sh
+./users_add_create.sh
 
-Other Linux distributions with Bash support
+🧠 Use Cases
+System resource monitoring (RAM, Disk, Network)
 
-🚀 Getting Started
-1. Clone the Repository
-bash
-Copy
-Edit
-git clone https://github.com/AyonDevNet/monitoring_tools.git
-cd monitoring_tool
-2. Make Scripts Executable
-bash
-Copy
-Edit
-chmod +x *.sh
-3. Run the Monitoring Script
-bash
-Copy
-Edit
-./monitor.sh
-📂 Folder Structure
-bash
-Copy
-Edit
-.
-├── monitor.sh            # Main monitoring script
-├── cpu_usage.sh          # CPU monitoring
-├── memory_usage.sh       # RAM monitoring
-├── disk_usage.sh         # Disk space monitoring
-├── network_usage.sh      # Network traffic monitoring
-├── logs/                 # Folder to store logs
-└── README.md             # Project documentation
-🛡️ Prerequisites
-Bash Shell (/bin/bash)
+Automated LAMP server provisioning
 
-Standard Linux utilities (top, df, free, ifconfig, awk, grep, etc.)
+Multi-user creation for lab or production environments
 
-📬 Contributing
-Pull requests are welcome! Feel free to fork this repository and submit improvements, bug fixes, or new features.
+Daily/weekly backups using compression
 
+Quick Linux diagnostics in CLI
+
+💡 Why Use These Bash Tools?
+✅ Lightweight and no dependencies
+
+✅ Written for real-world system admin tasks
+
+✅ Easy to understand and customize
+
+✅ Ideal for automation and cron jobs
+
+✅ Works on most Debian/Ubuntu-based systems
+
+🔐 Security & Warnings
+These scripts require sudo/root privileges to perform system-level operations. Always review scripts before running in a production environment.
+
+
+
+🤝 Contributions
+Pull requests, bug fixes, and suggestions are welcome! Please fork the repository and open an issue if you'd like to propose improvements.
+
+📜 License
+This project is open-source and available under the MIT License. See the LICENSE file for more details.
+
+👤 Author
+AyonDevNet
+🔗 GitHub Profile
+DevOps & Network Engineer | Passionate about Linux, automation, and monitoring.
+
+⭐ Star this repo if you find it helpful, and follow for future Bash scripting tools!
 
