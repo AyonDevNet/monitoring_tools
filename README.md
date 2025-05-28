@@ -78,7 +78,7 @@ These scripts require sudo/root privileges to perform system-level operations. A
 Pull requests, bug fixes, and suggestions are welcome! Please fork the repository and open an issue if you'd like to propose improvements.
 
 📜 License
-This project is open-source and available under the MIT License. See the LICENSE file for more details.
+This project is open-source and available .
 
 👤 Author
 AyonDevNet
