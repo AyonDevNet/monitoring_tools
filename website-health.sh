@@ -76,3 +76,23 @@ while true; do
     sleep 60
 done
  
+
+
+ #the webserver or server health is ok or not of all the ports
+
+#!/bin/bash
+
+read -p "Enter your server IP: " SERVER
+
+# Define the list of ports
+PORTS=(22 80 443 21 25 3306 8080)
+
+# Loop through each port
+for PORT in "${PORTS[@]}"; do
+    nc -zv "$SERVER" "$PORT" &>/dev/null
+    if [ $? -eq 0 ]; then
+        echo "Port $PORT on $SERVER is UP"
+    else
+        echo "Port $PORT on $SERVER is DOWN"
+    fi
+done
